@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Facture</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="facturestyle.css">
 </head>
 <body>
     <nav>
@@ -48,37 +48,26 @@
 
     <section class="facture">
         <center>
-        <table>
+        <table id="table_inv">
             <tr class="head">
                 <td><strong>DESCRIPTION</strong></td>
                 <td><strong>QUANTITÉ</strong></td>
                 <td><strong>PRIX UNITAIRE</strong></td>
                 <td><strong>TOTAL</strong></td>
             </tr>
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
+            <tr class="row" id="modeleLigne">
+                <td><input type="text" name="desc" class="input desc" value="desc3"></td>
+                <td><input type="text" name="qte" class="input qte" value="0"></td>
+                <td><input type="text" name="prix" class="input prix" value="0"></td>
+                <td><input type="text" name="total" class="totalLigne" readonly="readonly" value="0.00"></td>
             </tr>
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr>            
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr>            
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
+            <tr class="row lastrow" id="lastLigne">
+                <td><input type="text" name="desc" class="input desc" value="desc3"></td>
+                <td><input type="text" name="qte" class="input qte" value="0"></td>
+                <td><input type="text" name="prix" class="input prix" value="0"></td>
+                <td><input type="text" name="total" class="totalLigne" readonly="readonly" value="0.00"></td>
             </tr>
+
         </table>
     </center>
     </section>
@@ -88,7 +77,7 @@
             <table class="displayPrice">
                 <tr>
                     <td><h3>SOUS-TOTAL</h3></td>
-                    <td><h3>0.00</h3></td>
+                    <td><h3><input type="text" name="ssTotal" class="sousTotal" readonly="readonly" value="0.00"></h3></td>
                 </tr>
                 <tr>
                     <td><h3>REMISE</h3></td>
@@ -119,11 +108,11 @@
     </section>
 
     <section class="boutton">
-        <button>Calculer</button>
-        <button>Ajouter une ligne</button>
-        <button>Ajouter une ligne</button>
-        <button>Remplir automatiquement</button>
-        <button>Annuler</button>
+        <input type="button" value="Ajouter une ligne" onclick="ajouterLigne()">
+        <input type="button" value="Remplir automatiquement" onclick="remplir()">
+        <input type="button" value="calculer" onclick="calculate()">
     </section>
+
+    <script src="facture_scriptV1.js"></script>
 </body>
 </html>
